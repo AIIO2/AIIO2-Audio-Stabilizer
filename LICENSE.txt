@@ -1,0 +1,107 @@
+AIIO² AUDIO STABILIZER — PUBLIC BETA LICENSE
+V1.00 Public Beta | Build 10001
+26 November 2026
+
+Licensor:
+Ronny Künniger, AIIO² AUDIO LAB, Germany
+RonnyK.1980@icloud.com
+
+1. LICENSE GRANT
+
+Subject to these terms and applicable law, you are
+granted a free, non-exclusive, non-transferable
+license to install and use this beta on compatible
+Macs you own or control.
+
+Personal, professional and commercial audio
+production is permitted. Reasonable backup copies
+are permitted.
+
+This license applies to this particular release.
+Future versions may be offered under different terms
+or for a fee.
+
+2. AUDIO CONTENT
+
+Using this software does not transfer ownership
+of your audio to the licensor.
+
+You may publish, license or sell processed audio
+provided you possess the necessary rights in the
+source material and resulting output.
+
+3. SOFTWARE RIGHTS
+
+Audio Stabilizer is proprietary, closed-source
+software. Rights are reserved to their respective
+rights holders.
+
+You may share the official download link.
+
+Except where permitted by applicable law or
+authorized in writing, you may not redistribute,
+sell, sublicense or distribute modified copies of
+the software, or extract and reuse proprietary DSP
+implementations in another product.
+
+Reverse engineering and decompilation are restricted
+only to the extent permitted by applicable law.
+
+Mandatory rights, including lawful observation,
+study, testing, backup and interoperability rights
+under applicable software copyright law, remain
+unaffected. This includes sections 69d, 69e and 69g
+of the German Copyright Act where applicable.
+
+4. BETA STATUS
+
+This release may contain errors and compatibility
+limitations. Retain backups and verify exports.
+
+No fixed support period, future updates or future
+commercial release is promised.
+
+There is no scheduled beta expiry or online
+activation in this release.
+
+Mandatory statutory rights remain unaffected.
+
+5. WARRANTY AND LIABILITY
+
+To the extent permitted by applicable law, no
+voluntary guarantee of uninterrupted operation,
+fitness for a particular purpose or error-free
+results is provided.
+
+Nothing in this license excludes or limits liability
+for intentional misconduct, gross negligence,
+injury to life, body or health, fraud, or any other
+liability or statutory warranty that cannot lawfully
+be excluded or limited.
+
+Mandatory consumer rights remain unaffected.
+
+6. FEEDBACK
+
+Feedback is voluntary. Submitted suggestions may be
+used to improve the software without compensation.
+
+This does not transfer ownership of your music,
+authorize publication of your personal information,
+or override applicable privacy rights.
+
+7. APPLICABLE LAW
+
+Applicable third-party license terms take precedence
+for components covered by them.
+
+German law applies insofar as this does not deprive
+users of mandatory protections available under the
+law of their habitual residence.
+
+No exclusive court venue is imposed on consumers.
+
+This license grants no rights beyond those the
+licensor is legally entitled to grant.
+
+Copyright © 2026 Ronny Künniger.
