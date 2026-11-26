@@ -25,9 +25,9 @@
 
 **V1.00 BETA · macOS 14+ · Apple Silicon**
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.00-beta/AS-1-User-Manual.pdf) · [Release Notes](../../releases) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.00-beta/SHA256SUMS.txt)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.00-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Release Notes](../../releases) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.00-beta/SHA256SUMS.txt)
 
-[Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
+[License](LICENSE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
 
 <br>
 
@@ -423,6 +423,7 @@ Let mastering do the rest.**
 | Processor | Apple Silicon |
 | Architecture | Native ARM64 |
 | Application type | Standalone |
+| Minimum display workspace | 1440 × 960 logical points |
 | Audio processing | Stereo |
 | Export format | WAV |
 | Internet connection for audio processing | Not required |
@@ -430,6 +431,11 @@ Let mastering do the rest.**
 
 Intel Macs, Windows and Linux are not currently 
 supported.
+
+The rack interface requires sufficient logical screen 
+space. Depending on your Mac and display, an adjusted 
+display scaling setting or an external monitor may 
+be necessary.
 
 ---
 
@@ -460,6 +466,8 @@ processed exports before using them in production.
 Future versions may be offered under different 
 licensing terms.
 
+[Read the Public Beta License](LICENSE.txt)
+
 ---
 
 ## Download
@@ -486,24 +494,78 @@ macOS 14+ · Apple Silicon · Build 10001
 - RELEASE-NOTES.txt
 - THIRD-PARTY-NOTICES.txt
 
-### macOS Security Notice
+---
+
+## Installation
+
+1. Download the official ZIP package from this repository.
+2. Verify the SHA-256 checksum if desired.
+3. Extract the downloaded ZIP archive.
+4. Move AS-1.app to your Applications folder.
+5. Launch AS-1.
+
+No additional installation software, account 
+registration or online activation is required.
+
+### Important — First Launch on macOS
 
 The Public Beta is ad-hoc signed but is not currently 
 notarized by Apple.
 
-macOS may therefore display security warnings when 
-opening the application for the first time.
+When launching AS-1 for the first time, macOS Gatekeeper 
+may display a message stating that Apple could not verify 
+the application.
 
-Please consult the included installation instructions 
-and only obtain the application from its official 
-release page.
+This is expected for this non-notarized release and is 
+not, by itself, a specific malware detection. However, 
+it also does not establish that the application is safe.
 
-SHA-256 checksums are provided to verify download 
-integrity. A matching checksum does not independently 
+Only proceed if you have obtained the application from 
+this official repository and independently trust its 
+source.
+
+If you decide to open the application:
+
+1. Click **Done** to dismiss the initial warning.
+2. Open **System Settings**.
+3. Select **Privacy & Security**.
+4. Scroll down to the **Security** section.
+5. Locate the message concerning AS-1.
+6. Click **Open Anyway**.
+7. Authenticate if requested and confirm your decision.
+
+For reference, the corresponding German macOS settings 
+are **Datenschutz & Sicherheit → Dennoch öffnen**.
+
+macOS creates an exception for the application. 
+Global security protections remain enabled.
+
+[Apple's official instructions for opening applications safely](https://support.apple.com/en-us/102445)
+
+> [!IMPORTANT]
+> Never globally disable Gatekeeper or other macOS 
+> security protections. Do not override a specific 
+> malware detection or a warning that the application 
+> is damaged.
+
+### Download Integrity Verification
+
+SHA-256 checksums are provided for the ZIP package 
+and the separately downloadable User Manual.
+
+If both files and SHA256SUMS.txt are located in your 
+Downloads folder, open Terminal and enter:
+
+```bash
+cd ~/Downloads
+shasum -a 256 -c SHA256SUMS.txt
+```
+
+Both files should return OK.
+
+A matching checksum verifies consistency with the 
+published release files. It does not independently 
 establish software safety.
-
-Do not globally disable macOS security protections 
-or override malware warnings.
 
 ---
 
@@ -616,6 +678,8 @@ not the application source code.
 
 The free Public Beta does not imply that future 
 versions will necessarily be distributed free of charge.
+
+[Public Beta License](LICENSE.txt)
 
 ---
 
