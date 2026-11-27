@@ -1,6 +1,5 @@
-AIIO² AUDIO STABILIZER — PUBLIC BETA LICENSE
-V1.00 Public Beta | Build 10001
-26 November 2026
+V1.01 Public Beta | Build 10006
+27 November 2026
 
 Licensor:
 Ronny Künniger, AIIO² AUDIO LAB, Germany
