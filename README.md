@@ -798,6 +798,34 @@ third-party taps.
 Only grant trust if you trust the official developer
 and repository.
 
+#### Switching from a Manual Installation
+
+If AS-1 is already installed manually, Homebrew will
+not overwrite the existing application by default.
+
+1. Quit AS-1.
+2. Move your existing AS-1.app from the Applications
+   folder to a safe backup location.
+3. Follow the Homebrew installation instructions above.
+
+Alternatively, experienced users can explicitly replace
+an existing installation using:
+
+```bash
+brew tap aiio2/as1
+brew trust --cask aiio2/as1/as-1
+brew install --cask --force aiio2/as1/as-1
+```
+
+**Important:** The `--force` command overwrites the
+existing AS-1.app. Back up your existing application
+before proceeding.
+
+Migration from a manual installation to Homebrew has
+been successfully tested with Build 10010 on Apple M4
+hardware. Once installed through Homebrew, use the
+regular update commands below.
+
 **Update AS-1:**
 
 ```bash
@@ -883,6 +911,9 @@ Valid previously saved processing settings are retained.
 
 For installations managed by Homebrew, use the
 Homebrew update instructions instead.
+
+To switch from a manual installation to Homebrew,
+see [Switching from a Manual Installation](#switching-from-a-manual-installation).
 
 ### Important — First Launch on macOS
 
@@ -1014,11 +1045,19 @@ package and is also available as a separate PDF download.
 - Local launch and functional testing completed on Apple M4 hardware.
 - Official Homebrew Cask installation successfully tested on Apple M4 hardware.
 - Homebrew-installed application signature and build number verified.
+- Existing manual installation correctly detected and protected from default overwrite.
+- Explicit replacement of an existing manual installation using `--force` successfully tested.
+- Installation in the default Applications folder and registration of Build 10010 verified.
+- Homebrew installation registration successfully removed after manual deletion of the test app.
 
 Playback stability on earlier Apple Silicon hardware
 remains subject to real-world testing.
 
-The initial Homebrew installation has been verified.
+The initial Homebrew installation and migration from a
+manual installation have been verified.
+Automatic removal of the application bundle itself
+has not yet been verified, as the test app was manually
+deleted before the uninstall command was executed.
 The Homebrew upgrade workflow has not yet been tested
 with a subsequent application release.
 
