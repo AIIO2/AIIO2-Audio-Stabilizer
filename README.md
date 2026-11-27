@@ -1,6 +1,7 @@
 <div align="center">
 
 # AIIO² Audio Stabilizer
+
 ### AS-1 | Dedicated Pre-Master Audio Processor
 
 **STABILIZE. PRESERVE. REFINE.**
@@ -23,7 +24,7 @@
 
 **V1.01 BETA · Build 10010 · macOS 14+ · Apple Silicon**
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Release Notes](../../releases/tag/v1.01-beta) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v1.01-beta) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt)
 
 [License](LICENSE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
 
@@ -169,6 +170,7 @@ both conventional and AI-assisted music production.
 ---
 
 ## The Analog Reconstruction Engine
+
 ### Beyond Equalization. Beyond Spectral Denoising.
 
 The proprietary Analog Reconstruction Engine (ARE)
@@ -730,6 +732,7 @@ established.
 ---
 
 ## Free Public Beta
+
 ### V1.01 PUBLIC BETA — Build 10010
 
 AIIO² Audio Stabilizer is currently provided free of
@@ -772,6 +775,68 @@ macOS 14+ · Apple Silicon · Build 10010
 
 </div>
 
+### Alternative Installation via Homebrew
+
+AS-1 is also available through our official Homebrew Tap.
+
+For users with [Homebrew](https://brew.sh/) already
+installed, installation and future updates can be
+managed directly from Terminal.
+
+**Install AS-1:**
+
+```bash
+brew tap aiio2/as1
+brew trust --cask aiio2/as1/as-1
+brew install --cask aiio2/as1/as-1
+```
+
+The explicit trust command is required by Homebrew
+versions that enforce trust restrictions for
+third-party taps.
+
+Only grant trust if you trust the official developer
+and repository.
+
+**Update AS-1:**
+
+```bash
+brew update
+brew upgrade --cask aiio2/as1/as-1
+```
+
+Quit AS-1 before installing an update.
+
+**Uninstall AS-1:**
+
+```bash
+brew uninstall --cask aiio2/as1/as-1
+```
+
+Homebrew downloads the same official release package
+as the standard ZIP download and verifies its
+SHA-256 checksum during installation.
+
+AS-1 is installed in the Applications folder by default.
+
+Both distribution methods provide the same application,
+processing algorithms, features and licensing terms.
+
+The standard macOS security requirements still apply.
+Homebrew does not replace Apple notarization or
+Gatekeeper verification.
+
+The initial Homebrew installation of Build 10010 has
+been successfully tested on Apple M4 hardware.
+A version-to-version upgrade will be verified with
+a subsequent release.
+
+[Official AIIO² Homebrew Tap](https://github.com/AIIO2/homebrew-as1)
+
+**Homebrew is entirely optional.** The standard ZIP
+download remains available and does not require
+Homebrew or any additional installation software.
+
 ### Release Package Contents
 
 - AS-1.app
@@ -781,6 +846,14 @@ macOS 14+ · Apple Silicon · Build 10010
 - PRIVACY-NOTICE.txt
 - RELEASE-NOTES.txt
 - THIRD-PARTY-NOTICES.txt
+
+The standard ZIP package contains the application
+and all accompanying documentation.
+
+Homebrew installs the application itself.
+The User Manual and accompanying documentation
+remain available through the official release page
+and standard ZIP package.
 
 ---
 
@@ -795,6 +868,9 @@ macOS 14+ · Apple Silicon · Build 10010
 No additional installation software, account
 registration or online activation is required.
 
+Users who prefer Homebrew can follow the alternative
+installation instructions provided above.
+
 ### Updating from an Earlier Version or Build
 
 1. Quit Audio Stabilizer.
@@ -804,6 +880,9 @@ registration or online activation is required.
 5. Review the new AUDIO OPTIONS settings.
 
 Valid previously saved processing settings are retained.
+
+For installations managed by Homebrew, use the
+Homebrew update instructions instead.
 
 ### Important — First Launch on macOS
 
@@ -899,7 +978,6 @@ The comprehensive English User Manual covers:
 - Recommended production workflows
 
 The manual describes V1.01 BETA, Build 10006.
-
 The proprietary ARE and offline processing descriptions
 remain applicable to Build 10010.
 
@@ -934,9 +1012,15 @@ package and is also available as a separate PDF download.
 - Release archive integrity verified.
 - Signature verification after archive extraction passed.
 - Local launch and functional testing completed on Apple M4 hardware.
+- Official Homebrew Cask installation successfully tested on Apple M4 hardware.
+- Homebrew-installed application signature and build number verified.
 
 Playback stability on earlier Apple Silicon hardware
 remains subject to real-world testing.
+
+The initial Homebrew installation has been verified.
+The Homebrew upgrade workflow has not yet been tested
+with a subsequent application release.
 
 ### Previous Build — 10006
 
@@ -1002,6 +1086,12 @@ The development audit identified no built-in telemetry,
 analytics or audio upload service. Runtime network
 behavior has not been independently verified.
 
+Homebrew is an optional third-party installation
+and package management tool with its own privacy
+and analytics policies.
+
+[Homebrew Analytics Documentation](https://docs.brew.sh/Analytics)
+
 Further information is provided in the Privacy Notice
 included in the release package.
 
@@ -1047,6 +1137,10 @@ For playback-related issues, please also include:
 - Buffer underrun count
 - Whether the issue affects live playback, offline export or both
 
+For installation-related issues, please specify
+whether you used the standard ZIP download or
+the official Homebrew Tap.
+
 Please do not publicly upload copyrighted or
 confidential audio material without permission.
 
@@ -1081,6 +1175,15 @@ and community support.
 The automatically generated source archives provided
 by GitHub contain only the public repository files,
 not the application source code.
+
+An official Homebrew Tap is maintained separately:
+
+[AIIO2/homebrew-as1](https://github.com/AIIO2/homebrew-as1)
+
+The Homebrew repository contains installation and
+distribution instructions only. It does not contain
+the proprietary application source code or DSP
+algorithms.
 
 The free Public Beta does not imply that future
 versions will necessarily be distributed free of charge.
