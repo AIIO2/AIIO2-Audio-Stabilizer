@@ -21,7 +21,7 @@
 
 [![Download AS-1](https://img.shields.io/badge/DOWNLOAD_AS--1-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AIIO2-AS-1-V1.01-BETA.zip)
 
-**V1.01 BETA · macOS 14+ · Apple Silicon**
+**V1.01 BETA · Build 10010 · macOS 14+ · Apple Silicon**
 
 [User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Release Notes](../../releases/tag/v1.01-beta) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt)
 
@@ -55,9 +55,75 @@ All audio processing takes place locally on your Mac.
 
 ---
 
-## What's New in V1.01
+## Latest Update — Build 10010
 
-**Public Beta Update · Build 10006 · November 27, 2026**
+**V1.01 Public Beta · Playback Engine Update · November 27, 2026**
+
+This update focuses on real-time playback stability,
+monitoring responsiveness and improved flexibility
+across different Apple Silicon hardware configurations.
+
+Developed in response to feedback from early beta
+testers.
+
+### Audio Options
+
+- Adjustable hardware output buffer size.
+- Adjustable ARE processing buffer.
+- Persistent audio buffer settings.
+- Estimated playback latency display.
+- Buffer underrun counter.
+
+### Optimized Playback Engine
+
+- Buffered playback startup.
+- Increased audio processing reserve.
+- Higher background processing priority.
+- Optimized real-time ARE processing pipeline.
+
+### Direct A/B Monitoring
+
+- Immediate PROCESSED / UNPROCESSED switching without restarting playback.
+- Musical position mapping during BPM correction.
+- Original audio remains unchanged.
+- Direct comparison at corresponding musical positions.
+
+### ARE Processing Controls
+
+- Improved responsiveness when adjusting ARE parameters.
+- Dynamic updates of precomputed audio blocks.
+- Short sample-aligned transitions during parameter adjustments.
+- Immediate ARE bypass switching.
+- MATCH measurement reset when switching ARE states.
+
+### Interface
+
+- ENGAGE renamed to BYPASS.
+- AUDIO OUT renamed to AUDIO OPTIONS.
+- Orange AUDIO OPTIONS and OPEN MIX buttons.
+- Estimated ARE switching delay indication.
+
+### Sound Quality
+
+The proprietary Analog Reconstruction Engine and offline
+export implementation remain unchanged.
+
+SILK, SATIN, VELVET and THERMIONIC retain their original
+processing algorithms and sonic character.
+
+Stationary audio comparison tests produced byte-identical
+results in the tested scenarios.
+
+Improved playback stability on earlier Apple Silicon
+hardware remains subject to real-world testing.
+
+[Read the complete release notes](../../releases/tag/v1.01-beta)
+
+---
+
+## Previous Update — Build 10006
+
+The initial V1.01 update introduced:
 
 - Improved loudness stabilization with smoother transitions across beatless passages.
 - Improved handling of predominantly beatless music.
@@ -66,16 +132,12 @@ All audio processing takes place locally on your Mac.
 - Automatic initialization of target BPM from the detected track tempo.
 - Improved manual gain and timing keyframe editing.
 - Smoother transitions around manually removed correction ranges.
-- Faster Pre-Master Check workflow without a complete rescan after gain-only adjustments.
+- Streamlined Pre-Master Check workflow.
 - Visible factory and user preset names.
 - AIIO² SIGNATURE as the initial preset for new installations.
 - Updated User Manual and in-app guidance.
 
-The proprietary Analog Reconstruction Engine remains unchanged. SILK, SATIN, VELVET and THERMIONIC retain their original processing algorithms and sonic character.
-
 Existing valid user settings are retained when upgrading.
-
-[Read the complete V1.01 release notes](../../releases/tag/v1.01-beta)
 
 ---
 
@@ -394,6 +456,108 @@ curve, not the underlying audio content.
 
 ---
 
+## Audio Options & Playback Engine
+
+Introduced in Build 10010.
+
+AS-1 is a dedicated pre-master audio processor,
+not a live performance tool.
+
+Its playback architecture prioritizes processing
+quality and stable monitoring over ultra-low latency.
+
+A dedicated AUDIO OPTIONS panel allows the playback
+environment to be adapted to different hardware
+configurations and processing workloads.
+
+### Configurable Audio Settings
+
+| Setting | Function |
+|---|---|
+| Output Device | Select the audio output device |
+| Output Buffer | Configure the hardware output buffer in samples |
+| Processing Buffer | Configure additional ARE processing reserve |
+| Playback Latency | Estimated overall playback delay |
+| Buffer Underruns | Counter for detected buffer underruns |
+
+Available hardware output buffer sizes depend on the
+selected audio device.
+
+The ARE processing buffer provides three settings:
+
+- Small
+- Medium
+- Large
+
+### Default Configuration
+
+| Setting | Default |
+|---|---|
+| Output Buffer | 1024 samples |
+| Processing Buffer | Medium |
+
+Audio buffer preferences are stored locally and
+retained between application sessions.
+
+Increasing the buffer sizes may improve playback
+stability at the expense of additional monitoring latency.
+
+### Optimized Real-Time Processing
+
+The updated playback architecture incorporates:
+
+- Buffered playback startup
+- Increased processing reserve
+- Higher background processing priority
+- Dynamic updates of precomputed audio blocks
+- Short sample-aligned transitions during parameter changes
+
+These improvements are designed to reduce playback
+interruptions and improve parameter responsiveness
+without altering the proprietary ARE algorithms.
+
+### Immediate A/B Monitoring
+
+PROCESSED / UNPROCESSED switching now takes place
+without restarting playback.
+
+Musical positions are mapped between the original
+and processed signal, including when BPM stabilization
+is active.
+
+The original audio remains unchanged.
+
+To enable immediate switching, the ARE continues
+processing in the background during UNPROCESSED
+monitoring.
+
+Selecting UNPROCESSED is therefore not equivalent
+to disabling the ARE processing workload.
+
+The main ARE BYPASS control bypasses the four
+character-processing modules.
+
+### Playback Troubleshooting
+
+If you experience clicks, stuttering or interrupted
+playback:
+
+1. Open AUDIO OPTIONS.
+2. Increase the available hardware output buffer size.
+3. Select a larger ARE processing buffer.
+4. Monitor the buffer underrun counter.
+5. Check whether the issue occurs with specific ARE modules.
+6. Compare live playback with an exported WAV file.
+
+Real-time processing performance may vary depending
+on processor generation, audio device, sample rate,
+active modules and available system resources.
+
+Improved playback stability on earlier Apple Silicon
+hardware remains subject to real-world testing.
+
+---
+
 ## Pre-Master Check
 
 A dedicated offline analysis system evaluates the
@@ -443,7 +607,7 @@ quality or universal playback compatibility.
 
 ![Audio Stabilizer Interface](assets/interface.png)
 
-*Interface shown from an earlier public beta. Some controls and indicators have been updated in V1.01.*
+*Interface shown from an earlier public beta. Some controls, indicators and button colors have changed in subsequent builds.*
 
 A hardware-inspired rack interface brings all major
 processing and analysis modules together in a single
@@ -456,6 +620,7 @@ workspace.
 - Factory and user settings presets
 - Visible preset names
 - Integrated playback and export controls
+- Dedicated AUDIO OPTIONS panel
 
 No plugin chains. No unnecessary windows.
 No complex routing.
@@ -493,6 +658,9 @@ current parameters match its original values.
 
 The exported audio is intended for further mastering
 or other subsequent production stages.
+
+The offline export implementation remains unchanged
+in Build 10010.
 
 ---
 
@@ -552,6 +720,9 @@ space. Depending on your Mac and display, an adjusted
 display scaling setting or an external monitor may
 be necessary.
 
+This is particularly relevant for smaller MacBook
+displays.
+
 Compatibility across all supported macOS versions and
 hardware configurations has not been independently
 established.
@@ -559,7 +730,7 @@ established.
 ---
 
 ## Free Public Beta
-### V1.01 PUBLIC BETA — Build 10006
+### V1.01 PUBLIC BETA — Build 10010
 
 AIIO² Audio Stabilizer is currently provided free of
 charge under its proprietary beta license.
@@ -595,7 +766,7 @@ licensing terms.
 
 **V1.01 PUBLIC BETA**
 
-macOS 14+ · Apple Silicon · Build 10006
+macOS 14+ · Apple Silicon · Build 10010
 
 [User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt) · [All Releases](../../releases)
 
@@ -624,17 +795,15 @@ macOS 14+ · Apple Silicon · Build 10006
 No additional installation software, account
 registration or online activation is required.
 
-### Updating from V1.00
+### Updating from an Earlier Version or Build
 
 1. Quit Audio Stabilizer.
-2. Download and extract the new release package.
+2. Download and extract the current release package.
 3. Replace the previous AS-1.app in your Applications folder.
 4. Launch the updated application.
+5. Review the new AUDIO OPTIONS settings.
 
-Valid previously saved settings are retained.
-
-The previous public beta remains available in the
-release archive.
+Valid previously saved processing settings are retained.
 
 ### Important — First Launch on macOS
 
@@ -692,12 +861,12 @@ shasum -a 256 -c SHA256SUMS.txt
 
 Both files should return OK.
 
-Official V1.01 SHA-256 checksums:
+Official V1.01 Build 10010 SHA-256 checksums:
 
 **AIIO2-AS-1-V1.01-BETA.zip**
 
 ```
-e7ae5f1abd8db510c5f7d6ea895e13013077b7e6c85c2e14e8db7ffd09c9e195
+42c3ec5d59c53aa0b0d0128329f96f0ed176430eacf77862a828801bd8d768b0
 ```
 
 **AS-1-User-Manual.pdf**
@@ -729,10 +898,20 @@ The comprehensive English User Manual covers:
 - Technical specifications
 - Recommended production workflows
 
-The manual has been updated for V1.01 BETA and is
-included in the official release package.
+The manual describes V1.01 BETA, Build 10006.
 
-It is also available as a separate PDF download.
+The proprietary ARE and offline processing descriptions
+remain applicable to Build 10010.
+
+Some playback controls, switching behavior and interface
+descriptions differ in the current build.
+
+Please refer to the current release notes and the
+Audio Options section of this README for information
+about the updated playback engine.
+
+The User Manual is included in the official release
+package and is also available as a separate PDF download.
 
 <div align="center">
 
@@ -744,24 +923,61 @@ It is also available as a separate PDF download.
 
 ## Quality Assurance
 
-V1.01 BETA — Build 10006:
+### Current Build — 10010
+
+- Targeted switching tests passed.
+- Targeted buffering tests passed.
+- Concurrent-access tests passed.
+- Stationary audio comparison tests produced byte-identical results in the tested scenarios.
+- ARE algorithms and offline export implementation remain unchanged.
+- Application signature verified.
+- Release archive integrity verified.
+- Signature verification after archive extraction passed.
+- Local launch and functional testing completed on Apple M4 hardware.
+
+Playback stability on earlier Apple Silicon hardware
+remains subject to real-world testing.
+
+### Previous Build — 10006
 
 - 250 automated checks passed.
 - All 41 new targeted tests passed.
 - No new regressions identified in the executed comparison tests.
-- ARE processing implementation remains unchanged.
-- No new external software dependencies identified.
-- Application signature and release archive integrity verified locally.
+- No new external software dependencies identified in the Build 10006 audit.
 
-Four legacy test assertions remain unsuccessful in both
-Build 10001 and Build 10006.
+Four legacy test assertions remained unsuccessful in
+both Build 10001 and Build 10006.
 
 Two concern normalization of a legacy monitor setting.
 Two compare different processing stages and do not
 validate the actual live audio output.
 
+A separate complete third-party dependency and rights
+audit for Build 10010 has not been performed.
+
 Complete physical audio-device testing and compatibility
 verification across all target systems remain outstanding.
+
+---
+
+## Known Limitations
+
+- Apple Silicon only.
+- Standalone application, not an AU/VST plugin.
+- Arrangement and tempo detection remain heuristic.
+- Pitch preservation may introduce artifacts.
+- Live preview and offline export are not guaranteed to be sample-identical.
+- Larger audio buffers increase monitoring latency.
+- ARE processing remains active during UNPROCESSED monitoring.
+- Real-time playback performance may vary across Apple Silicon generations.
+- The displayed preset name does not guarantee that all current settings match the original preset.
+- AUTO BPM may require manual reactivation after unreliable tempo detection.
+- APPLY updates existing measurements rather than performing an independent new scan.
+- Severe audio artifacts may require dedicated restoration tools.
+- Metering is not independently standards-certified.
+- No automatic mastering EQ or brickwall limiter.
+- The included User Manual describes Build 10006.
+- Full compatibility verification across all supported systems remains outstanding.
 
 ---
 
@@ -779,8 +995,8 @@ The application is designed to operate without:
 Audio files do not need to be uploaded to an
 external service for processing.
 
-Processing settings, preset names and application
-preferences may be stored locally.
+Processing settings, preset names, audio buffer settings
+and application preferences may be stored locally.
 
 The development audit identified no built-in telemetry,
 analytics or audio upload service. Runtime network
@@ -803,6 +1019,9 @@ The Public Beta is an opportunity to evaluate the
 software across different musical styles, production
 workflows and listening environments.
 
+Special thanks to the early beta testers whose
+feedback helped improve the playback engine.
+
 ### Bug Reports
 
 Please use [GitHub Issues](../../issues) to report
@@ -813,9 +1032,20 @@ When reporting an issue, please include:
 - Application version and build number
 - macOS version
 - Mac model or processor
+- Available RAM
 - Relevant processing settings
 - A description of the unexpected behavior
 - Steps to reproduce the issue, if possible
+
+For playback-related issues, please also include:
+
+- Audio output device
+- Source audio sample rate
+- Output buffer setting
+- Processing buffer setting
+- Active ARE modules
+- Buffer underrun count
+- Whether the issue affects live playback, offline export or both
 
 Please do not publicly upload copyrighted or
 confidential audio material without permission.
