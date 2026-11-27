@@ -24,7 +24,7 @@
 
 **V1.01 BETA · Build 10010 · macOS 14+ · Apple Silicon**
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v1.01-beta) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v1.01-beta)
 
 [License](LICENSE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
 
@@ -771,7 +771,7 @@ licensing terms.
 
 macOS 14+ · Apple Silicon · Build 10010
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [SHA-256 Checksums](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/SHA256SUMS.txt) · [All Releases](../../releases)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [All Releases](../../releases)
 
 </div>
 
@@ -888,10 +888,9 @@ and standard ZIP package.
 ## Installation
 
 1. Download the official ZIP package from this repository.
-2. Verify the SHA-256 checksum.
-3. Extract the downloaded ZIP archive.
-4. Move AS-1.app to your Applications folder.
-5. Launch AS-1.
+2. Extract the downloaded ZIP archive.
+3. Move AS-1.app to your Applications folder.
+4. Launch AS-1.
 
 No additional installation software, account
 registration or online activation is required.
@@ -956,38 +955,7 @@ Global security protections remain enabled.
 > malware detection or a warning that the application
 > is damaged.
 
-### Download Integrity Verification
-
-SHA-256 checksums are provided for the ZIP package
-and the separately downloadable User Manual.
-
-If both files and SHA256SUMS.txt are located in your
-Downloads folder, open Terminal and enter:
-
-```bash
-cd ~/Downloads
-shasum -a 256 -c SHA256SUMS.txt
-```
-
-Both files should return OK.
-
-Official V1.01 Build 10010 SHA-256 checksums:
-
-**AIIO2-AS-1-V1.01-BETA.zip**
-
-```
-42c3ec5d59c53aa0b0d0128329f96f0ed176430eacf77862a828801bd8d768b0
-```
-
-**AS-1-User-Manual.pdf**
-
-```
-e4c5aa9fe68657b7d167a86d34947a3a06328ffe013325958751fddb17639411
-```
-
-A matching checksum verifies consistency with the
-published release files. It does not independently
-establish software safety.
+Optional SHA-256 checksums are available with the release assets on GitHub.
 
 ---
 
