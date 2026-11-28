@@ -1,0 +1,11 @@
+
+{
+  "schemaVersion": 1,
+  "version": "2.00 BETA",
+  "build": 10019,
+  "channel": "beta",
+  "minimumMacOS": "14.0",
+  "architecture": "arm64",
+  "downloadURL": "https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-V2.00-BETA-Build10019.zip",
+  "releaseNotesURL": "https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/tag/v2.00-beta-build10019"
+}
