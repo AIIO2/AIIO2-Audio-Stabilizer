@@ -1,34 +1,29 @@
+
 <div align="center">
 
 # AIIO² Audio Stabilizer
 
-### AS-1 | Dedicated Pre-Master Audio Processor
+### AS-2 | Dedicated Pre-Master Audio Processor
 
 **STABILIZE. PRESERVE. REFINE.**
 
-![AIIO² Audio Stabilizer](assets/product-render.png)
+*Less Digital. More Music.*
 
-*Hardware-inspired software. Designed for sound.*
-
-![Version](https://img.shields.io/badge/V1.01-PUBLIC_BETA-D98B35)
+![Version](https://img.shields.io/badge/V2.00-PUBLIC_BETA-D98B35)
 ![Platform](https://img.shields.io/badge/macOS-14%2B-555555)
 ![Architecture](https://img.shields.io/badge/Apple_Silicon-Native-555555)
 ![License](https://img.shields.io/badge/License-Proprietary-555555)
 ![Price](https://img.shields.io/badge/Public_Beta-Free-39805A)
 
-**Less Digital. More Music.**
-
 <br>
 
-[![Download AS-1](https://img.shields.io/badge/DOWNLOAD_AS--1-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AIIO2-AS-1-V1.01-BETA.zip)
+[![Download AS-2](https://img.shields.io/badge/DOWNLOAD_AS--2-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-V2.00-BETA-Build10019.zip)
 
-**V1.01 BETA · Build 10010 · macOS 14+ · Apple Silicon**
+**V2.00 BETA · Build 10019 · macOS 14+ · Apple Silicon**
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v1.01-beta)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v2.00-beta-build10019)
 
 [License](LICENSE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
-
-<br>
 
 </div>
 
@@ -36,611 +31,376 @@
 
 ## Overview
 
-AIIO² Audio Stabilizer (AS-1) is a dedicated standalone
-pre-master audio processor for macOS, combining
-intelligent loudness stabilization, adaptive tempo
-correction, advanced signal analysis and a proprietary
-analog-inspired sound processing architecture.
+AIIO² Audio Stabilizer (AS-2) is a dedicated standalone pre-master audio processor for macOS, combining intelligent loudness stabilization, adaptive tempo correction, comprehensive signal analysis and a proprietary analog-inspired sound processing architecture.
+
+Originally developed to address the challenges of AI-generated music, AS-2 is equally intended for conventional and AI-assisted music production.
 
 Its purpose is not to master your music.
 
-**Its purpose is to give your mastering chain a better
-starting point.**
+**Its purpose is to give your mastering chain a better starting point.**
 
-Audio Stabilizer focuses on preserving musical dynamics,
-improving structural consistency and refining unwanted
-digital sound characteristics before the final
-mastering stage.
+AS-2 focuses on preserving musical dynamics, improving structural consistency and gently refining unwanted digital sound characteristics.
 
 All audio processing takes place locally on your Mac.
 
 ---
 
-## Latest Update — Build 10010
-
-**V1.01 Public Beta · Playback Engine Update · November 27, 2026**
-
-This update focuses on real-time playback stability,
-monitoring responsiveness and improved flexibility
-across different Apple Silicon hardware configurations.
-
-Developed in response to feedback from early beta
-testers.
-
-### Audio Options
-
-- Adjustable hardware output buffer size.
-- Adjustable ARE processing buffer.
-- Persistent audio buffer settings.
-- Estimated playback latency display.
-- Buffer underrun counter.
-
-### Optimized Playback Engine
-
-- Buffered playback startup.
-- Increased audio processing reserve.
-- Higher background processing priority.
-- Optimized real-time ARE processing pipeline.
-
-### Direct A/B Monitoring
-
-- Immediate PROCESSED / UNPROCESSED switching without restarting playback.
-- Musical position mapping during BPM correction.
-- Original audio remains unchanged.
-- Direct comparison at corresponding musical positions.
-
-### ARE Processing Controls
-
-- Improved responsiveness when adjusting ARE parameters.
-- Dynamic updates of precomputed audio blocks.
-- Short sample-aligned transitions during parameter adjustments.
-- Immediate ARE bypass switching.
-- MATCH measurement reset when switching ARE states.
-
-### Interface
-
-- ENGAGE renamed to BYPASS.
-- AUDIO OUT renamed to AUDIO OPTIONS.
-- Orange AUDIO OPTIONS and OPEN MIX buttons.
-- Estimated ARE switching delay indication.
-
-### Sound Quality
-
-The proprietary Analog Reconstruction Engine and offline
-export implementation remain unchanged.
-
-SILK, SATIN, VELVET and THERMIONIC retain their original
-processing algorithms and sonic character.
-
-Stationary audio comparison tests produced byte-identical
-results in the tested scenarios.
-
-Improved playback stability on earlier Apple Silicon
-hardware remains subject to real-world testing.
-
-[Read the complete release notes](../../releases/tag/v1.01-beta)
-
----
-
-## Previous Update — Build 10006
-
-The initial V1.01 update introduced:
-
-- Improved loudness stabilization with smoother transitions across beatless passages.
-- Improved handling of predominantly beatless music.
-- Smooth automatic gain protection at recognized intro and outro boundaries.
-- BPM detection confidence indicator: LOW / MEDIUM / HIGH.
-- Automatic initialization of target BPM from the detected track tempo.
-- Improved manual gain and timing keyframe editing.
-- Smoother transitions around manually removed correction ranges.
-- Streamlined Pre-Master Check workflow.
-- Visible factory and user preset names.
-- AIIO² SIGNATURE as the initial preset for new installations.
-- Updated User Manual and in-app guidance.
-
-Existing valid user settings are retained when upgrading.
-
----
-
 ## Development Philosophy
 
-The development of Audio Stabilizer began with a
-practical problem encountered while producing music
-with modern generative audio systems.
+Even musically impressive productions can contain inconsistent loudness, subtle tempo drift, unstable spectral textures and unpleasant digital harshness.
 
-Even musically impressive productions can contain
-inconsistent loudness, subtle tempo drift, unstable
-spectral textures and unwanted digital harshness.
+The development of Audio Stabilizer began with a practical question:
 
-Conventional mastering processors are not necessarily
-designed to address these problems at their source.
+**What if we could make an existing mix sound a little better without fundamentally changing its musical identity?**
 
-Audio Stabilizer was developed to approach them
-differently.
+The objective is not to eliminate every artifact, filter out every imperfect component or reshape the music into something else.
 
-Rather than forcing audio into a predefined loudness
-target or applying conventional frequency correction,
-its processing architecture is designed to work with
-the existing musical material.
+Instead, AS-2 is designed to make the existing signal:
 
-Although originally inspired by the challenges of
-AI-generated music, Audio Stabilizer is designed for
-both conventional and AI-assisted music production.
+- More consistent.
+- Slightly softer.
+- More open.
+- Less digitally harsh.
+- More pleasant to listen to.
+- Better prepared for subsequent mastering.
+
+Rather than forcing audio into predefined loudness targets or relying exclusively on conventional frequency correction, its processing architecture responds to the musical material itself.
+
+AS-2 deliberately avoids aggressive processing as its primary objective.
+
+> [!IMPORTANT]
+> AS-2 does not replace your mastering chain and is not intended to do so. Dedicated restoration, corrective EQ, compression, limiting and final loudness decisions remain part of the subsequent production and mastering workflow.
+
+**Prepare the signal. Preserve the music. Let mastering do the rest.**
+
+---
+
+## Application Interface
+
+![AIIO² AS-2 Application Interface](assets/interface-as2.png)
+
+*Actual AS-2 V2 application interface.*
+
+A hardware-inspired rack interface brings all major processing, monitoring and analysis modules together in a single workspace.
+
+- Interactive waveform and correction curves.
+- Dedicated loudness and tempo stabilization modules.
+- Four independent analog-inspired character processors.
+- Animated processing activity indicators.
+- Configurable spectrum analyzer and stereo field display.
+- Comprehensive loudness and peak metering.
+- Integrated Pre-Master Check.
+- Factory and user presets.
+- Dedicated audio configuration and playback diagnostics.
+- Integrated software updates.
+
+No plugin chains. No complex routing. One dedicated environment for pre-master preparation.
 
 ---
 
 ## The Analog Reconstruction Engine
 
-### Beyond Equalization. Beyond Spectral Denoising.
+### Beyond conventional frequency correction
 
-The proprietary Analog Reconstruction Engine (ARE)
-is the sonic core of Audio Stabilizer.
+The proprietary Analog Reconstruction Engine (ARE) is the sonic core of AS-2.
 
-It represents an independently developed processing
-architecture that approaches digital harshness,
-spectral instability and tonal refinement from a
-different perspective.
+Conventional equalization primarily modifies the amplitude of selected frequency regions. Specialized spectral denoising identifies and attenuates unwanted spectral components.
 
-Conventional equalization primarily modifies the
-amplitude of selected frequency regions.
+Both are valuable tools. However, digital roughness and unwanted textures can be closely intertwined with desirable musical information.
 
-Many audio enhancement and restoration tools, on
-the other hand, rely on spectral denoising techniques
-that identify and attenuate unwanted spectral components.
+The ARE approaches this challenge differently.
 
-While effective for their intended purposes, these
-approaches can also affect desirable musical information,
-particularly when unwanted digital textures are closely
-intertwined with the original sound.
+It combines adaptive spectral refinement, nonlinear signal shaping, harmonic enrichment and analog-inspired processing.
 
-**The ARE approaches this challenge differently.**
+Its algorithms respond to the structure, energy and behavior of the musical signal itself.
 
-Rather than relying solely on frequency correction
-or spectral subtraction, it combines adaptive spectral
-refinement, nonlinear signal shaping, harmonic enrichment
-and analog-inspired processing.
+The objective is not simply to remove unwanted sound, but to refine its digital character while preserving musical substance, texture and detail.
 
-Its algorithms respond to the structure, energy and
-dynamic behavior of the musical signal itself.
-
-The objective is not simply to remove unwanted sound,
-but to refine its digital character while preserving
-as much musical substance, texture and detail as possible.
-
-Four complementary processors form its sonic
-architecture.
+Four complementary processors form its sonic architecture.
 
 ### VELVET
 
 **Weight. Foundation. Substance.**
 
-An analog-inspired nonlinear processing stage designed
-to enhance the perceived body and coherence of the
-low-frequency material.
+An analog-inspired nonlinear processing stage designed to enhance the perceived body and coherence of low-frequency material.
 
-- Nonlinear line-stage processing
-- Push-pull bass architecture
-- Subtle harmonic enrichment
-- Enhancement of existing low-frequency content
-- No synthetic sub-bass generation
+- Nonlinear line-stage processing.
+- Balanced push-pull foundation architecture.
+- Subtle harmonic enrichment.
+- Enhancement of existing low-frequency content.
+- Oversampled nonlinear processing.
+- No synthetic sub-bass generation.
 
-VELVET is designed to add substance to the existing
-signal rather than simply boost a predefined
-frequency range.
+VELVET is designed to add substance to the existing signal rather than simply boost a predefined frequency range.
+
+Its effect depends on the low-frequency content already present in the source.
 
 ### SATIN
 
 **Texture. Balance. Character.**
 
-A bipolar midrange refinement processor providing
-continuous control between two complementary sonic
-characteristics.
+A bipolar midrange refinement processor offering two complementary sonic directions.
 
-- Negative values: warmer, VELVET-inspired character
-- Positive values: smoother, SILK-inspired character
-- Neutral position: bypass
-- Signal-dependent processing rather than conventional EQ
+- Negative values: warmer, VELVET-inspired nonlinear character.
+- Positive values: smoother, SILK-inspired spectral refinement.
+- Neutral center position.
+- Independent module activation.
+- Signal-dependent processing rather than conventional EQ.
 
-SATIN allows the user to refine the character of
-the midrange without relying on conventional
-equalization curves alone.
+The positive and negative directions represent different processing architectures, not conventional midrange boost and cut.
+
+SATIN allows the user to refine the character of the middle register while retaining control over musical articulation and presence.
 
 ### SILK
 
 **Clarity without unnecessary harshness.**
 
-SILK uses adaptive, multi-stage spectral processing
-designed to address unwanted digital roughness,
-unstable spectral textures and excessive harshness.
+SILK uses adaptive, multi-stage spectral processing designed to address perceived digital roughness, metallic textures and excessive high-frequency harshness.
 
-Its approach differs from conventional noise-profile-based
-spectral denoising.
+Its approach differs from conventional noise-profile-based spectral denoising.
 
-Rather than treating unwanted spectral components solely
-as noise to be removed, SILK evaluates the behavior
-and structure of the musical signal itself.
+Rather than relying on a predefined noise profile, SILK evaluates the local structure and behavior of the musical signal.
 
-- Adaptive multi-stage spectral refinement
-- Signal-dependent processing
-- Transient and harmonic protection
-- Reduction of perceived digital harshness
-- Preservation of musical character
-- No conventional noise profile required
+- Adaptive multi-stage spectral refinement.
+- Signal-dependent processing.
+- Transient and harmonic protection.
+- Stereo-linked spectral treatment.
+- Reduction of perceived digital harshness.
+- No conventional noise profile required.
 
-This approach is particularly relevant when unwanted
-digital textures are embedded within the musical
-material itself rather than existing as a clearly
-separable noise source.
+This approach is particularly relevant when unwanted digital textures are embedded within the musical material itself rather than existing as a clearly separable noise source.
 
-By reducing perceived spectral roughness before mastering,
-SILK may reduce the need for aggressive corrective EQ,
-helping retain high-frequency detail while achieving a
-smoother and more pleasant top end.
+SILK aims to achieve a smoother and more pleasant upper register without unnecessarily stripping the identity of percussion, harmonics or ambience.
 
-SILK is not intended to reconstruct missing original
-audio information or replace specialized audio
-restoration tools.
+SILK does not reconstruct missing audio information and cannot perfectly distinguish unwanted artifacts from musical detail.
 
-### THERMIONIC / TUBE
+### TUBE
 
 **Harmonics. Depth. Analog-inspired character.**
 
-A dynamic nonlinear processing architecture inspired
-by the sonic characteristics of classic vacuum tube
-circuits.
+A dynamic nonlinear processing architecture inspired by the sonic characteristics of classic vacuum tube circuits.
 
-Four distinct tube-inspired profiles are available:
+Four distinct listening signatures are available:
 
-| Profile | Description |
+| Profile | Sonic character |
 |---|---|
-| 12AU7 | Original tube-inspired character profile |
-| 12AX7 | Original tube-inspired character profile |
-| 6SN7 | Original tube-inspired character profile |
-| 300B | Original tube-inspired character profile |
+| 12AU7 | Restrained, intimate and softly rounded |
+| 12AX7 | Forward, expressive and harmonically rich |
+| 6SN7 | Silky, balanced and cohesive |
+| 300B | Warm, flowing and gently luminous |
 
-The processing incorporates dynamic saturation,
-shared stereo energy behavior, sag-inspired response
-and adaptive mid/side characteristics.
+The processing incorporates dynamic saturation, shared stereo energy behavior, sag-inspired response and profile-dependent stereo presentation.
 
-These profiles are original digital interpretations,
-not measured reproductions of specific hardware units.
+These profiles are original digital interpretations, not measured reproductions of specific physical hardware units.
 
 ### Processing Architecture
 
 The ARE incorporates:
 
-- Adaptive spectral processing
-- Nonlinear harmonic processing
-- Residual-based processing architecture
-- Signal-dependent processing
-- Transient and harmonic protection
-- 8x oversampling in designated nonlinear stages
-- Double-precision calculations in relevant DSP stages
-- Independent module activation
-- Global ARE bypass
+- Adaptive spectral processing.
+- Nonlinear harmonic processing.
+- Residual-based signal reconstruction.
+- Signal-dependent processing.
+- Transient and harmonic protection.
+- Oversampling in designated nonlinear stages.
+- Double-precision calculations in relevant DSP stages.
+- Independent module activation.
+- Global ARE bypass.
 
-The ARE is neither a conventional equalizer nor a
-traditional spectral denoiser.
+The ARE is neither a conventional equalizer nor a traditional spectral denoiser.
 
-It represents a dedicated approach to musical
-signal refinement.
+Specialized spectral denoising and restoration remain valuable when dealing with severe artifacts, persistent noise or heavily damaged recordings.
 
-Specialized spectral denoising and restoration remain
-valuable when dealing with severe artifacts, persistent
-noise or heavily damaged recordings.
-
-Where necessary, these processes can complement
-Audio Stabilizer within the wider production and
-mastering workflow.
-
-**The goal is not simply to remove unwanted sound.**
-
-**The goal is to preserve the music while refining
-its digital character.**
+**The goal is to preserve the music while refining its digital character.**
 
 ---
 
 ## Loudness Stabilizer
 
-Unlike conventional loudness normalization or dynamic
-range compression, the Loudness Stabilizer is designed
-to reduce unwanted long-term level inconsistencies
-between comparable musical sections.
+Unlike conventional loudness normalization or dynamic range compression, the Loudness Stabilizer is designed to reduce unwanted long-term level inconsistencies between comparable musical sections.
 
-It does not force the entire track toward a fixed
-LUFS target.
+It does not force the entire track toward a fixed LUFS target.
 
-Dedicated arrangement protection helps preserve
-intentional musical contrasts, including:
+Dedicated arrangement protection helps preserve intentional musical contrasts, including:
 
-- Introductions
-- Outros
-- Breaks
-- Beatless sections
+- Introductions.
+- Outros.
+- Breaks.
+- Beatless sections.
 
-V1.01 introduces smoother transitions between corrected
-and protected sections.
+Short protected passages can smoothly bridge surrounding gain corrections, while longer passages can gradually return toward neutral gain before correction resumes.
 
-Short beatless passages can smoothly bridge surrounding
-gain corrections, while longer passages can gradually
-return toward neutral gain before correction resumes.
+Loudness stabilization remains available for predominantly beatless material.
 
-Loudness stabilization remains available for predominantly
-beatless material.
+Adjustable analysis, correction, smoothing, protection and gain limits allow the stabilization behavior to be adapted to individual productions.
 
-Recognized intro and outro boundaries receive smoothly
-weighted automatic gain protection when the corresponding
-protection options are enabled.
-
-Adjustable analysis, correction, smoothing and gain
-limits allow the stabilization behavior to be adapted
-to the individual production.
-
-Musical dynamics remain an essential part of the
-production rather than an obstacle to be eliminated.
+Musical dynamics remain an essential part of the production rather than an obstacle to be eliminated.
 
 ---
 
 ## BPM Stabilizer
 
-Designed to address subtle tempo drift and unwanted
-timing inconsistencies while retaining musical movement.
+Designed to address subtle tempo drift and unwanted timing inconsistencies while retaining musical movement.
 
-- Automatic tempo analysis
-- BPM detection confidence: LOW / MEDIUM / HIGH
-- Automatic or manually selected target BPM
-- Automatic target initialization from detected track tempo
-- Manual target adjustment within ±8% of the detected tempo
-- Adjustable correction strength
-- Tempo smoothing
-- Groove preservation controls
-- Transient protection
-- Optional pitch preservation
-- Manual timing curve editing
+- Automatic tempo analysis.
+- BPM detection coverage displayed as a percentage.
+- Automatic or manually selected target BPM.
+- Automatic target initialization from detected track tempo.
+- Target adjustment within ±8% of the detected tempo.
+- Adjustable correction strength.
+- Tempo smoothing.
+- Groove-related smoothing controls.
+- Transient handling.
+- Optional pitch preservation.
+- Manual timing curve editing.
 
-Manual target adjustment is available when AUTO BPM is
-disabled and tempo detection is sufficiently reliable.
+BPM DETECTION indicates the estimated proportion of the track with usable local tempo estimates.
 
-When tempo detection is unreliable, automatic tempo
-correction is paused and AUTO BPM is disabled.
+| Detection coverage | Status |
+|---|---|
+| Below 40% | Insufficient coverage; automatic correction paused |
+| 40% to below 60% | Partial coverage; review carefully |
+| 60–100% | Greater coverage; musical verification still recommended |
 
-After loading another track with reliable tempo detection,
-AUTO BPM can be manually re-enabled.
+The percentage does not represent a probability that the detected BPM is correct.
 
-The BPM Stabilizer is not intended to quantize every
-musical event to a rigid timing grid.
+The BPM Stabilizer is not intended to quantize every musical event to a rigid timing grid.
 
-Its purpose is to improve long-term tempo consistency
-while respecting the musical characteristics of
-the performance.
+Its purpose is to improve long-term tempo consistency while respecting the musical characteristics of the performance.
 
 Tempo and arrangement detection remain heuristic.
 
 ---
 
-## Precision Audio Analysis
+## Audio Analysis & Monitoring
 
-Audio Stabilizer provides an integrated environment
-for evaluating both the original and processed signal.
+AS-2 provides an integrated environment for evaluating both the original and processed signal.
 
-- Real-time spectrum analyzer
-- Configurable spectrum resolution and display scales
-- Stereo field visualization
-- Stereo correlation analysis
-- Momentary and short-term loudness
-- Playback-integrated loudness
-- True-peak metering
-- Peak and RMS metering
-- Interactive signal visualization
-- Editable gain and timing curves
-- Level-matched A/B monitoring
+- Real-time spectrum analyzer.
+- Configurable spectrum bands and display scales.
+- Stereo field visualization.
+- Stereo correlation analysis.
+- Momentary and short-term LUFS.
+- Playback-integrated loudness.
+- True-peak metering and peak hold.
+- Peak and RMS metering.
+- Interactive signal visualization.
+- Editable gain and timing curves.
+- Configurable meter visibility and response.
+- Level-matched A/B monitoring.
 
-Monitoring tools allow processing decisions to be
-evaluated both visually and by listening.
-
-The MATCH function is intended for monitoring only
-and does not affect the exported audio.
+Monitoring tools allow processing decisions to be evaluated both visually and by listening.
 
 ### Manual Curve Editing
 
-Gain and timing corrections can be refined manually
-using editable keyframes.
+Gain and timing corrections can be refined manually using editable keyframes.
 
-V1.01 introduces:
+- Neutral keyframe insertion.
+- Relative keyframe adjustment.
+- Numeric editing.
+- Add at Playhead.
+- Independent gain and timing correction masks.
+- Smooth transitions around removed correction ranges.
+- Undo and Redo.
 
-- Neutral keyframe insertion based on the existing manual curve.
-- Relative keyframe dragging.
-- Preservation of existing correction-removal ranges when inserting new keyframes.
-- Smooth transitions around removed gain and timing correction ranges.
+Removing a correction range affects the correction curve, not the underlying audio content.
 
-Removing a correction range affects the correction
-curve, not the underlying audio content.
+### Direct A/B Monitoring
+
+PROCESSED and UNPROCESSED monitoring allows comparison at corresponding musical positions without restarting Core Audio.
+
+The original signal remains unchanged.
+
+The processed signal follows the tempo correction map, while the original plays at its native rate.
+
+### MATCH
+
+The MATCH function compensates perceived loudness differences during monitoring.
+
+It also compensates the fixed final OUTPUT gain offset, including changes made through Pre-Master Check APPLY.
+
+This allows processing decisions to be evaluated without being unnecessarily influenced by output gain differences.
+
+**MATCH affects monitoring only. It never changes the exported WAV.**
 
 ---
 
-## Audio Options & Playback Engine
+## Streaming Audio Architecture
 
-Introduced in Build 10010.
+AS-2 introduces a fundamentally redesigned internal audio processing architecture.
 
-AS-1 is a dedicated pre-master audio processor,
-not a live performance tool.
+Rather than repeatedly recalculating extensive portions of the track, AS-2 uses persistent, block-based streaming DSP.
 
-Its playback architecture prioritizes processing
-quality and stable monitoring over ultra-low latency.
+Loudness and tempo correction curves are prepared in advance. The audio signal is then processed continuously through the active processing stages.
 
-A dedicated AUDIO OPTIONS panel allows the playback
-environment to be adapted to different hardware
-configurations and processing workloads.
+The architecture incorporates:
 
-### Configurable Audio Settings
+- Persistent DSP processing states.
+- Prepared loudness and tempo correction maps.
+- Bounded processing look-ahead.
+- Reusable spectral processing resources.
+- Persistent filter and oversampling histories.
+- Shared processing architecture for playback, export and output scanning.
+
+The redesigned architecture is intended to improve processing efficiency and responsiveness while preserving the established ARE sound character.
+
+### Audio Options
 
 | Setting | Function |
 |---|---|
-| Output Device | Select the audio output device |
-| Output Buffer | Configure the hardware output buffer in samples |
-| Processing Buffer | Configure additional ARE processing reserve |
-| Playback Latency | Estimated overall playback delay |
-| Buffer Underruns | Counter for detected buffer underruns |
+| Output Device | Select the Core Audio output |
+| Output Buffer | Configure the hardware output buffer |
+| Processing Buffer | Small, Medium or Large processing reserve |
+| Estimated Latency | Estimated overall playback delay |
+| Buffer Underruns | Counter for missing prepared audio samples |
+| Playback Diagnostics | Save local diagnostic information |
 
-Available hardware output buffer sizes depend on the
-selected audio device.
+Larger buffers can improve resistance to temporary scheduling interruptions at the expense of additional monitoring latency.
 
-The ARE processing buffer provides three settings:
+Buffer settings do not reduce exported audio quality.
 
-- Small
-- Medium
-- Large
-
-### Default Configuration
-
-| Setting | Default |
-|---|---|
-| Output Buffer | 1024 samples |
-| Processing Buffer | Medium |
-
-Audio buffer preferences are stored locally and
-retained between application sessions.
-
-Increasing the buffer sizes may improve playback
-stability at the expense of additional monitoring latency.
-
-### Optimized Real-Time Processing
-
-The updated playback architecture incorporates:
-
-- Buffered playback startup
-- Increased processing reserve
-- Higher background processing priority
-- Dynamic updates of precomputed audio blocks
-- Short sample-aligned transitions during parameter changes
-
-These improvements are designed to reduce playback
-interruptions and improve parameter responsiveness
-without altering the proprietary ARE algorithms.
-
-### Immediate A/B Monitoring
-
-PROCESSED / UNPROCESSED switching now takes place
-without restarting playback.
-
-Musical positions are mapped between the original
-and processed signal, including when BPM stabilization
-is active.
-
-The original audio remains unchanged.
-
-To enable immediate switching, the ARE continues
-processing in the background during UNPROCESSED
-monitoring.
-
-Selecting UNPROCESSED is therefore not equivalent
-to disabling the ARE processing workload.
-
-The main ARE BYPASS control bypasses the four
-character-processing modules.
-
-### Playback Troubleshooting
-
-If you experience clicks, stuttering or interrupted
-playback:
-
-1. Open AUDIO OPTIONS.
-2. Increase the available hardware output buffer size.
-3. Select a larger ARE processing buffer.
-4. Monitor the buffer underrun counter.
-5. Check whether the issue occurs with specific ARE modules.
-6. Compare live playback with an exported WAV file.
-
-Real-time processing performance may vary depending
-on processor generation, audio device, sample rate,
-active modules and available system resources.
-
-Improved playback stability on earlier Apple Silicon
-hardware remains subject to real-world testing.
+AS-2 prioritizes audio preparation and stable monitoring over ultra-low-latency live performance.
 
 ---
 
 ## Pre-Master Check
 
-A dedicated offline analysis system evaluates the
-original mix or processed output before export.
+A dedicated analysis system evaluates the original mix or processed output before export.
 
 The Pre-Master Check focuses on:
 
-- Available headroom
-- True-peak levels
-- Typical signal peaks
-- Potential overload conditions
-- Mono compatibility
-- Output gain recommendations
+- Available headroom.
+- Maximum estimated true-peak level.
+- Typical signal peaks.
+- Potential overload conditions.
+- Mono compatibility.
+- Output gain recommendations.
 
-The processed output can be evaluated with the
-selected export sample rate taken into account.
+Processed output analysis includes the selected export sample rate.
 
-The integrated output gain recommendation targets
-a maximum true-peak level of -6 dBTP, providing a
-consistent starting point for subsequent mastering.
+The integrated output gain recommendation targets a maximum estimated true-peak level of **−6 dBTP**, providing a consistent preparation target for subsequent mastering.
 
-V1.01 introduces a streamlined APPLY function.
+APPLY adjusts the absolute final OUTPUT gain and updates the existing peak measurements accordingly.
 
-Applying the recommended output gain updates existing
-peak readings using the gain difference, without
-requiring a complete new render and scan.
+It is not a limiter or an independent new scan.
 
-Existing mono compatibility findings are preserved.
+### Recommended Final Workflow
 
-Changes to processing settings, correction curves or
-the selected export sample rate invalidate previous
-output scan results.
+1. Complete all stabilization and ARE processing.
+2. Finish fades and select the export sample rate.
+3. Select SCAN OUTPUT.
+4. Run SCAN and review the findings.
+5. Press APPLY when appropriate.
+6. Export WAV.
 
-APPLY is a calculated measurement update, not an
-independent new measurement. A fresh scan may produce
-different typical-peak readings for very quiet material.
+**SCAN OUTPUT → APPLY → EXPORT**
 
-The objective is to identify technical conditions
-that may affect subsequent mastering.
+> [!IMPORTANT]
+> Perform the final output scan after all processing and export settings have been finalized. MATCH compensates final output gain changes during monitoring, so perceived playback loudness is not a reliable indicator of exported headroom.
 
-A successful check is not a guarantee of mastering
-quality or universal playback compatibility.
+Changes to relevant processing or export settings require a fresh output scan.
 
----
-
-## User Interface
-
-![Audio Stabilizer Interface](assets/interface.png)
-
-*Interface shown from an earlier public beta. Some controls, indicators and button colors have changed in subsequent builds.*
-
-A hardware-inspired rack interface brings all major
-processing and analysis modules together in a single
-workspace.
-
-- Dedicated processing modules
-- Independent module activation
-- Interactive signal and correction curves
-- Analog-inspired meters and controls
-- Factory and user settings presets
-- Visible preset names
-- Integrated playback and export controls
-- Dedicated AUDIO OPTIONS panel
-
-No plugin chains. No unnecessary windows.
-No complex routing.
-
-### AIIO² SIGNATURE
-
-New installations begin with the AIIO² SIGNATURE
-preset, providing a recommended starting point for
-exploring the processing architecture.
-
-Existing valid settings are retained when upgrading
-from a previous version.
-
-All factory preset values remain unchanged in V1.01.
-
-The displayed preset name identifies the last selected
-or initial preset and does not guarantee that all
-current parameters match its original values.
+The −6 dBTP preparation target is not a final release loudness target or a universal mastering requirement.
 
 ---
 
@@ -654,49 +414,40 @@ current parameters match its original values.
 | Sample rate | Original or selectable |
 | Selectable sample rates | 44.1–192 kHz |
 | Dithering | Optional TPDF for integer PCM |
-| Output gain | Adjustable |
+| Output gain | −24 to +12 dB |
 | Fade-in / Fade-out | Adjustable |
 | Fade characteristics | Multiple selectable curves |
+| Metadata | Optional clean tags |
+| Export destination | User-selectable |
 
-The exported audio is intended for further mastering
-or other subsequent production stages.
+The original source file is never overwritten.
 
-The offline export implementation remains unchanged
-in Build 10010.
+OUTPUT resets to 0 dB after each successful new audio import.
+
+The exported audio is intended for further mastering or other subsequent production stages.
 
 ---
 
-## Built for Pre-Mastering
+## Production Workflow
 
-Audio Stabilizer deliberately avoids conventional
-final-stage mastering processors.
+A typical AI-assisted music production workflow:
 
-It does not contain:
+**Generated stereo mix → AS-2 → Pre-master WAV → Mastering chain**
 
-- A conventional mastering equalizer
-- A multiband mastering compressor
-- A loudness maximizer
-- A brickwall limiter
+AS-2 can also be used before stem separation if the complete stereo mix exhibits unwanted loudness or tempo drift.
 
-These creative and technical decisions remain with
-the mastering engineer.
+For conventional productions with stable timing and dynamics, the stabilizers can be bypassed and the ARE used independently.
 
-Audio Stabilizer is not a mastering suite.
+AS-2 does not include:
 
-It is designed to provide a more consistent, refined
-and musically coherent signal before the creative
-and technical decisions of mastering begin.
+- A conventional mastering equalizer.
+- A multiband mastering compressor.
+- A loudness maximizer.
+- A brickwall limiter.
+- Stem separation.
+- Comprehensive audio restoration.
 
-Conventional EQ, compression, specialized restoration
-and limiting remain valuable tools in the subsequent
-mastering workflow.
-
-The objective is to prepare a smoother, more open and
-more pleasant signal that may require less aggressive
-corrective processing during mastering.
-
-**Prepare the signal. Preserve the music.
-Let mastering do the rest.**
+These remain separate creative and technical decisions within the wider production workflow.
 
 ---
 
@@ -708,54 +459,54 @@ Let mastering do the rest.**
 | Processor | Apple Silicon |
 | Architecture | Native ARM64 |
 | Application type | Standalone |
-| Minimum display workspace | 1440 × 960 logical points |
-| Audio processing | Stereo |
-| Export format | WAV |
-| Internet connection for audio processing | Not required |
+| Designed display workspace | 1440 × 960 logical points |
+| Input | Stereo audio |
+| Supported source rates | 8–384 kHz |
+| Supported input includes | WAV, AIFF, FLAC |
+| Export format | Stereo WAV |
+| Internet for audio processing | Not required |
 | Account or activation | Not required |
 
-Intel Macs, Windows and Linux are not currently
-supported.
+Intel Macs, Windows and Linux are not currently supported.
 
-The rack interface requires sufficient logical screen
-space. Depending on your Mac and display, an adjusted
-display scaling setting or an external monitor may
-be necessary.
+Display scaling or an external monitor may be necessary on smaller MacBook displays.
 
-This is particularly relevant for smaller MacBook
-displays.
+### Apple Silicon Compatibility
 
-Compatibility across all supported macOS versions and
-hardware configurations has not been independently
-established.
+AS-2 is designed for native Apple Silicon operation.
+
+On the first AS-2 startup on M1-family Macs, the application initializes the output buffer to 1024 samples and the processing buffer to Large.
+
+Subsequent user preferences are retained.
+
+**Real-world performance validation on M1-family Macs is still pending.**
+
+Playback performance may vary with processor generation, sample rate, active processing modules, audio device and available system resources.
+
+No universal minimum RAM requirement has been validated.
 
 ---
 
 ## Free Public Beta
 
-### V1.01 PUBLIC BETA — Build 10010
+### AS-2 V2.00 BETA — Build 10019
 
-AIIO² Audio Stabilizer is currently provided free of
-charge under its proprietary beta license.
+AIIO² Audio Stabilizer is currently provided free of charge under its proprietary beta license.
 
-- Free for personal music production
-- Free for professional and commercial music production
-- No subscription
-- No account required
-- No online activation
-- No scheduled beta expiration
-- Proprietary, closed-source software
-- Local audio processing
-- Comprehensive English User Manual included
+- Free for personal music production.
+- Free for professional and commercial music production.
+- No subscription.
+- No account required.
+- No online activation.
+- No scheduled beta expiration.
+- Proprietary, closed-source software.
+- Local audio processing.
 
-This is an early public beta. Unexpected behavior
-and compatibility limitations may occur.
+This is public beta software. Unexpected behavior and compatibility limitations may occur.
 
-Please retain your original audio files and verify
-processed exports before using them in production.
+Retain your original audio files and verify processed exports before using them in production.
 
-Future versions may be offered under different
-licensing terms.
+Future versions may be offered under different licensing terms.
 
 [Read the Public Beta License](LICENSE.txt)
 
@@ -765,123 +516,19 @@ licensing terms.
 
 <div align="center">
 
-[![Download AS-1](https://img.shields.io/badge/DOWNLOAD_AS--1-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AIIO2-AS-1-V1.01-BETA.zip)
+[![Download AS-2](https://img.shields.io/badge/DOWNLOAD_AS--2-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-V2.00-BETA-Build10019.zip)
 
-**V1.01 PUBLIC BETA**
+**V2.00 PUBLIC BETA**
 
-macOS 14+ · Apple Silicon · Build 10010
+macOS 14+ · Apple Silicon · Build 10019
 
-[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf) · [All Releases](../../releases)
+[User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-User-Manual.pdf) · [All Releases](../../releases)
 
 </div>
 
-### Alternative Installation via Homebrew
+The release ZIP contains AS-2.app.
 
-AS-1 is also available through our official Homebrew Tap.
-
-For users with [Homebrew](https://brew.sh/) already
-installed, installation and future updates can be
-managed directly from Terminal.
-
-**Install AS-1:**
-
-```bash
-brew tap aiio2/as1
-brew trust --cask aiio2/as1/as-1
-brew install --cask aiio2/as1/as-1
-```
-
-The explicit trust command is required by Homebrew
-versions that enforce trust restrictions for
-third-party taps.
-
-Only grant trust if you trust the official developer
-and repository.
-
-#### Switching from a Manual Installation
-
-If AS-1 is already installed manually, Homebrew will
-not overwrite the existing application by default.
-
-1. Quit AS-1.
-2. Move your existing AS-1.app from the Applications
-   folder to a safe backup location.
-3. Follow the Homebrew installation instructions above.
-
-Alternatively, experienced users can explicitly replace
-an existing installation using:
-
-```bash
-brew tap aiio2/as1
-brew trust --cask aiio2/as1/as-1
-brew install --cask --force aiio2/as1/as-1
-```
-
-**Important:** The `--force` command overwrites the
-existing AS-1.app. Back up your existing application
-before proceeding.
-
-Migration from a manual installation to Homebrew has
-been successfully tested with Build 10010 on Apple M4
-hardware. Once installed through Homebrew, use the
-regular update commands below.
-
-**Update AS-1:**
-
-```bash
-brew update
-brew upgrade --cask aiio2/as1/as-1
-```
-
-Quit AS-1 before installing an update.
-
-**Uninstall AS-1:**
-
-```bash
-brew uninstall --cask aiio2/as1/as-1
-```
-
-Homebrew downloads the same official release package
-as the standard ZIP download and verifies its
-SHA-256 checksum during installation.
-
-AS-1 is installed in the Applications folder by default.
-
-Both distribution methods provide the same application,
-processing algorithms, features and licensing terms.
-
-The standard macOS security requirements still apply.
-Homebrew does not replace Apple notarization or
-Gatekeeper verification.
-
-The initial Homebrew installation of Build 10010 has
-been successfully tested on Apple M4 hardware.
-A version-to-version upgrade will be verified with
-a subsequent release.
-
-[Official AIIO² Homebrew Tap](https://github.com/AIIO2/homebrew-as1)
-
-**Homebrew is entirely optional.** The standard ZIP
-download remains available and does not require
-Homebrew or any additional installation software.
-
-### Release Package Contents
-
-- AS-1.app
-- AS-1-User-Manual.pdf
-- README.txt
-- LICENSE.txt
-- PRIVACY-NOTICE.txt
-- RELEASE-NOTES.txt
-- THIRD-PARTY-NOTICES.txt
-
-The standard ZIP package contains the application
-and all accompanying documentation.
-
-Homebrew installs the application itself.
-The User Manual and accompanying documentation
-remain available through the official release page
-and standard ZIP package.
+The User Manual is available as a separate PDF download.
 
 ---
 
@@ -889,311 +536,292 @@ and standard ZIP package.
 
 1. Download the official ZIP package from this repository.
 2. Extract the downloaded ZIP archive.
-3. Move AS-1.app to your Applications folder.
-4. Launch AS-1.
+3. Move AS-2.app to your Applications folder.
+4. Launch AS-2.
 
-No additional installation software, account
-registration or online activation is required.
+No additional installation software, account registration or online activation is required.
 
-Users who prefer Homebrew can follow the alternative
-installation instructions provided above.
+### Updating from AS-1
 
-### Updating from an Earlier Version or Build
+AS-1 is now AS-2.
 
-1. Quit Audio Stabilizer.
-2. Download and extract the current release package.
-3. Replace the previous AS-1.app in your Applications folder.
-4. Launch the updated application.
-5. Review the new AUDIO OPTIONS settings.
+The application retains its existing bundle identifier so compatible preferences and presets can remain available.
 
-Valid previously saved processing settings are retained.
+1. Quit AS-1.
+2. Back up your existing AS-1.app.
+3. Remove the old application from the Applications folder.
+4. Download and extract the current AS-2 release.
+5. Move AS-2.app to Applications.
+6. Launch AS-2 and review AUDIO OPTIONS.
 
-For installations managed by Homebrew, use the
-Homebrew update instructions instead.
-
-To switch from a manual installation to Homebrew,
-see [Switching from a Manual Installation](#switching-from-a-manual-installation).
+Homebrew-managed installations should be updated through Homebrew instead.
 
 ### Important — First Launch on macOS
 
-The Public Beta is ad-hoc signed but is not currently
-Developer ID signed or notarized by Apple.
+The Public Beta is ad hoc signed but is not currently Developer ID signed or notarized by Apple.
 
-When launching AS-1 for the first time, macOS Gatekeeper
-may display a message stating that Apple could not verify
-the application.
+When launching AS-2 for the first time, macOS Gatekeeper may display a message stating that Apple could not verify the application.
 
-This is expected for this non-notarized release and is
-not, by itself, a specific malware detection. However,
-it also does not establish that the application is safe.
+This is not, by itself, a specific malware detection. However, it also does not establish that the application is safe.
 
-Only proceed if you have obtained the application from
-this official repository and independently trust its
-source.
+Only proceed if you have obtained the application from the official repository and trust its source.
 
 If you decide to open the application:
 
-1. Click **Done** to dismiss the initial warning.
-2. Open **System Settings**.
-3. Select **Privacy & Security**.
-4. Scroll down to the **Security** section.
-5. Locate the message concerning AS-1.
-6. Click **Open Anyway**.
+1. Click Done to dismiss the initial warning.
+2. Open System Settings.
+3. Select Privacy & Security.
+4. Scroll down to the Security section.
+5. Locate the message concerning AS-2.
+6. Click Open Anyway, if available.
 7. Authenticate if requested and confirm your decision.
 
-For reference, the corresponding German macOS settings
-are **Datenschutz & Sicherheit → Dennoch öffnen**.
+For German macOS installations:
 
-macOS creates an exception for the application.
-Global security protections remain enabled.
+**Datenschutz & Sicherheit → Dennoch öffnen**
 
 [Apple's official instructions for opening applications safely](https://support.apple.com/en-us/102445)
 
 > [!IMPORTANT]
-> Never globally disable Gatekeeper or other macOS
-> security protections. Do not override a specific
-> malware detection or a warning that the application
-> is damaged.
+> Never globally disable Gatekeeper or other macOS security protections. Do not override a specific malware detection or a warning that the application is damaged.
 
-Optional SHA-256 checksums are available with the release assets on GitHub.
+---
+
+## Alternative Installation via Homebrew
+
+The existing official Homebrew Tap and cask identifier are retained for AS-2.
+
+The historical cask name `as-1` remains unchanged to preserve compatibility with existing installations.
+
+### Install
+
+```bash
+brew tap aiio2/as1
+brew trust --cask aiio2/as1/as-1
+brew install --cask aiio2/as1/as-1
+```
+
+The explicit trust command is required by Homebrew versions that enforce trust restrictions for third-party taps.
+
+Only grant trust if you trust the official developer and repository.
+
+### Update
+
+```bash
+brew update
+brew upgrade --cask aiio2/as1/as-1
+```
+
+Quit the application before updating.
+
+### Uninstall
+
+```bash
+brew uninstall --cask aiio2/as1/as-1
+```
+
+### Switching from a Manual Installation
+
+Quit the application and move your existing AS-1.app or AS-2.app to a safe backup location before installing through Homebrew.
+
+Homebrew verifies the SHA-256 checksum of the official release package during installation.
+
+The standard macOS security requirements still apply.
+
+[Official AIIO² Homebrew Tap](https://github.com/AIIO2/homebrew-as1)
+
+**Homebrew is entirely optional.**
+
+The standard ZIP download remains available and does not require Homebrew.
+
+---
+
+## Integrated Software Updates
+
+AS-2 includes a native software update system.
+
+- Automatic update checks at startup.
+- Configurable automatic update preference.
+- Manual update checks through UPDATE or Check for Updates.
+- Native in-app ZIP downloads.
+- Selectable download destination.
+- Download progress indication.
+- Download cancellation.
+- Show in Finder after successful download.
+- Direct access to official release notes.
+- Integrated Homebrew update instructions.
+
+Automatic update checks are enabled by default and can be disabled through the saved update preference.
+
+AS-2 compares numeric build numbers and offers only newer compatible releases.
+
+The application does not automatically install downloaded updates or replace itself.
+
+Installation remains under the user's control.
+
+Homebrew users should continue updating through Homebrew.
 
 ---
 
 ## Documentation
 
-The comprehensive English User Manual covers:
+The comprehensive 33-page English User Manual has been updated for AS-2 V2.00 BETA — Build 10019.
 
-- Installation and initial setup
-- Complete interface overview
-- Individual processing modules
-- Analog Reconstruction Engine
-- Signal processing principles
-- Audio analysis and metering
-- Gain and timing curve editing
-- BPM detection and target controls
-- Pre-Master Check
-- Audio export
-- Technical specifications
-- Recommended production workflows
+It covers:
 
-The manual describes V1.01 BETA, Build 10006.
-The proprietary ARE and offline processing descriptions
-remain applicable to Build 10010.
-
-Some playback controls, switching behavior and interface
-descriptions differ in the current build.
-
-Please refer to the current release notes and the
-Audio Options section of this README for information
-about the updated playback engine.
-
-The User Manual is included in the official release
-package and is also available as a separate PDF download.
+- Product philosophy.
+- Installation and compatibility.
+- Quick-start workflow.
+- Complete interface overview.
+- Loudness and BPM stabilization.
+- Gain and timing curve editing.
+- Analog Reconstruction Engine.
+- Streaming audio architecture.
+- Playback and MATCH.
+- Audio options and diagnostics.
+- Pre-Master Check.
+- Export settings.
+- Software updates and privacy.
+- Troubleshooting and technical specifications.
 
 <div align="center">
 
-[![User Manual](https://img.shields.io/badge/USER_MANUAL-PDF-D98B35?style=for-the-badge&logo=readthedocs&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v1.01-beta/AS-1-User-Manual.pdf)
+[![User Manual](https://img.shields.io/badge/USER_MANUAL-PDF-D98B35?style=for-the-badge&logo=readthedocs&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-User-Manual.pdf)
 
 </div>
 
 ---
 
-## Quality Assurance
+## Release History
 
-### Current Build — 10010
+AS-2 represents the second generation of AIIO² Audio Stabilizer, previously distributed as AS-1.
 
-- Targeted switching tests passed.
-- Targeted buffering tests passed.
-- Concurrent-access tests passed.
-- Stationary audio comparison tests produced byte-identical results in the tested scenarios.
-- ARE algorithms and offline export implementation remain unchanged.
-- Application signature verified.
-- Release archive integrity verified.
-- Signature verification after archive extraction passed.
-- Local launch and functional testing completed on Apple M4 hardware.
-- Official Homebrew Cask installation successfully tested on Apple M4 hardware.
-- Homebrew-installed application signature and build number verified.
-- Existing manual installation correctly detected and protected from default overwrite.
-- Explicit replacement of an existing manual installation using `--force` successfully tested.
-- Installation in the default Applications folder and registration of Build 10010 verified.
-- Homebrew installation registration successfully removed after manual deletion of the test app.
+V2 introduces persistent streaming DSP, refined monitoring, updated processing controls, new branding and integrated software updates.
 
-Playback stability on earlier Apple Silicon hardware
-remains subject to real-world testing.
+Detailed changes and historical releases are available separately.
 
-The initial Homebrew installation and migration from a
-manual installation have been verified.
-Automatic removal of the application bundle itself
-has not yet been verified, as the test app was manually
-deleted before the uninstall command was executed.
-The Homebrew upgrade workflow has not yet been tested
-with a subsequent application release.
-
-### Previous Build — 10006
-
-- 250 automated checks passed.
-- All 41 new targeted tests passed.
-- No new regressions identified in the executed comparison tests.
-- No new external software dependencies identified in the Build 10006 audit.
-
-Four legacy test assertions remained unsuccessful in
-both Build 10001 and Build 10006.
-
-Two concern normalization of a legacy monitor setting.
-Two compare different processing stages and do not
-validate the actual live audio output.
-
-A separate complete third-party dependency and rights
-audit for Build 10010 has not been performed.
-
-Complete physical audio-device testing and compatibility
-verification across all target systems remain outstanding.
+[Current Release Notes](../../releases/tag/v2.00-beta-build10019) · [Complete Release History](../../releases)
 
 ---
 
-## Known Limitations
+## Quality Assurance & Beta Limitations
+
+Targeted development tests for Build 10019 included output gain changes, MATCH compensation, combined ARE and BPM processing and offline export comparisons.
+
+No buffer underruns were observed in the documented targeted test runs.
+
+Sixteen offline render comparisons remained byte-identical to the preceding development baseline.
+
+These results apply to the executed test scenarios and do not establish universal hardware compatibility.
+
+Current limitations include:
 
 - Apple Silicon only.
-- Standalone application, not an AU/VST plugin.
-- Arrangement and tempo detection remain heuristic.
-- Pitch preservation may introduce artifacts.
-- Live preview and offline export are not guaranteed to be sample-identical.
-- Larger audio buffers increase monitoring latency.
-- ARE processing remains active during UNPROCESSED monitoring.
-- Real-time playback performance may vary across Apple Silicon generations.
-- The displayed preset name does not guarantee that all current settings match the original preset.
-- AUTO BPM may require manual reactivation after unreliable tempo detection.
-- APPLY updates existing measurements rather than performing an independent new scan.
-- Severe audio artifacts may require dedicated restoration tools.
-- Metering is not independently standards-certified.
-- No automatic mastering EQ or brickwall limiter.
-- The included User Manual describes Build 10006.
-- Full compatibility verification across all supported systems remains outstanding.
+- Standalone application, not an AU or VST plugin.
+- Heuristic tempo and arrangement detection.
+- Possible pitch-preservation artifacts.
+- Potential differences between preview and offline export, particularly after seeking.
+- Hardware-dependent real-time processing performance.
+- Increased monitoring latency with larger buffers.
+- No independently certified metering suite.
+- No guaranteed artifact removal.
+- No final-stage mastering processors.
+- Ad hoc signing without Apple notarization.
+
+Real-world M1-family testing and comprehensive compatibility verification remain outstanding.
 
 ---
 
 ## Privacy
 
-Audio processing is performed locally.
+All audio processing takes place locally on your Mac.
 
-The application is designed to operate without:
+AS-2 does not require:
 
-- Cloud-based audio processing
-- User registration
-- Online activation
-- Subscription requirements
+- Cloud-based audio processing.
+- Audio uploads.
+- User registration.
+- Online activation.
+- A subscription.
 
-Audio files do not need to be uploaded to an
-external service for processing.
+Processing preferences, preset names and audio configuration may be stored locally.
 
-Processing settings, preset names, audio buffer settings
-and application preferences may be stored locally.
+Playback diagnostics are saved as local files and are only shared if the user chooses to send them.
 
-The development audit identified no built-in telemetry,
-analytics or audio upload service. Runtime network
-behavior has not been independently verified.
+The integrated update system contacts GitHub to check for available releases.
 
-Homebrew is an optional third-party installation
-and package management tool with its own privacy
-and analytics policies.
+Automatic checks are enabled by default and can be disabled. User-selected downloads and release-note links also use the official GitHub infrastructure.
+
+GitHub receives ordinary technical connection information when these services are accessed.
+
+Audio processing remains available offline.
+
+The application does not include a built-in audio-upload or device-identifier telemetry function. Runtime network behavior has not been independently audited.
+
+Homebrew is an optional third-party package management tool with its own privacy and analytics policies.
 
 [Homebrew Analytics Documentation](https://docs.brew.sh/Analytics)
-
-Further information is provided in the Privacy Notice
-included in the release package.
 
 ---
 
 ## Feedback & Community
 
-Audio Stabilizer is an independently developed
-audio software project.
+Audio Stabilizer is an independently developed audio software project.
 
-Constructive feedback, listening experiences,
-compatibility reports and bug reports are welcome.
+Constructive feedback, listening experiences, compatibility reports and bug reports are welcome.
 
-The Public Beta is an opportunity to evaluate the
-software across different musical styles, production
-workflows and listening environments.
-
-Special thanks to the early beta testers whose
-feedback helped improve the playback engine.
+Special thanks to the early beta testers whose feedback helped shape the new AS-2 architecture.
 
 ### Bug Reports
 
-Please use [GitHub Issues](../../issues) to report
-technical problems.
+Please use [GitHub Issues](../../issues).
 
-When reporting an issue, please include:
+When reporting a problem, include:
 
-- Application version and build number
-- macOS version
-- Mac model or processor
-- Available RAM
-- Relevant processing settings
-- A description of the unexpected behavior
-- Steps to reproduce the issue, if possible
+- Application version and build number.
+- macOS version.
+- Mac model or processor.
+- Available RAM.
+- Source audio format and sample rate.
+- Relevant processing settings.
+- Description and steps to reproduce the issue.
 
-For playback-related issues, please also include:
+For playback-related issues, also include:
 
-- Audio output device
-- Source audio sample rate
-- Output buffer setting
-- Processing buffer setting
-- Active ARE modules
-- Buffer underrun count
-- Whether the issue affects live playback, offline export or both
+- Audio output device.
+- Output buffer setting.
+- Processing buffer setting.
+- Active ARE modules.
+- Buffer underrun count.
+- Whether the issue affects playback, offline export or both.
 
-For installation-related issues, please specify
-whether you used the standard ZIP download or
-the official Homebrew Tap.
+Local playback diagnostics can be saved through AUDIO OPTIONS.
 
-Please do not publicly upload copyrighted or
-confidential audio material without permission.
+Please do not publicly upload copyrighted or confidential audio material without permission.
 
 ### Community Discussions
 
-Use [GitHub Discussions](../../discussions) to share:
-
-- Listening experiences
-- Preferred ARE settings
-- Production workflows
-- Feature suggestions
-- General questions
-- Constructive feedback
+Use [GitHub Discussions](../../discussions) to share listening experiences, preferred settings, production workflows, feature suggestions and constructive feedback.
 
 ---
 
 ## About This Repository
 
-This is the official distribution, documentation
-and support repository for AIIO² Audio Stabilizer.
+This is the official distribution, documentation and support repository for AIIO² Audio Stabilizer.
 
-Audio Stabilizer is proprietary, closed-source
-software.
+Audio Stabilizer is proprietary, closed-source software.
 
-The application source code and proprietary DSP
-algorithms are not publicly distributed.
+The application source code and proprietary DSP algorithms are not publicly distributed.
 
-This repository provides official application releases,
-product documentation, release notes, bug reporting
-and community support.
+This repository provides official application releases, product documentation, release notes, bug reporting and community support.
 
-The automatically generated source archives provided
-by GitHub contain only the public repository files,
-not the application source code.
+The automatically generated source archives provided by GitHub contain only the public repository files, not the application source code.
 
-An official Homebrew Tap is maintained separately:
+The official Homebrew Tap is maintained separately:
 
 [AIIO2/homebrew-as1](https://github.com/AIIO2/homebrew-as1)
 
-The Homebrew repository contains installation and
-distribution instructions only. It does not contain
-the proprietary application source code or DSP
-algorithms.
-
-The free Public Beta does not imply that future
-versions will necessarily be distributed free of charge.
+The free Public Beta does not imply that future versions will necessarily be distributed free of charge.
 
 [Public Beta License](LICENSE.txt)
 
