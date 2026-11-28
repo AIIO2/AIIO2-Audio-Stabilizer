@@ -1,0 +1,85 @@
+
+AIIO² AUDIO STABILIZER — AS-2
+PRIVACY NOTICE
+
+Effective: November 28, 2026
+Version: V2.00 BETA — Build 10019
+
+1. LOCAL AUDIO PROCESSING
+
+All audio processing takes place locally on the user's Mac.
+Audio files are not uploaded to external processing services.
+
+No user account, registration, subscription or online
+activation is required.
+
+2. LOCALLY STORED INFORMATION
+
+The application may store processing preferences, user
+presets, audio configuration and update preferences
+locally on the user's Mac.
+
+3. SOFTWARE UPDATE CHECKS
+
+AS-2 includes an integrated software update system.
+
+Automatic update checks are enabled by default and can
+be disabled by the user.
+
+The application retrieves publicly available release
+information from the official GitHub repository.
+
+When checking for updates or downloading a release,
+GitHub may receive standard technical connection
+information, including the user's IP address.
+
+Audio content, processing settings and user presets
+are not transmitted as part of the update check.
+
+Updates are not installed automatically.
+
+4. PLAYBACK DIAGNOSTICS
+
+Playback diagnostics are generated and saved locally.
+
+Diagnostic files are not automatically transmitted.
+Sharing diagnostic information with the developer
+is entirely voluntary.
+
+5. TELEMETRY AND ANALYTICS
+
+AS-2 does not include built-in usage analytics,
+device-identifier tracking or audio-upload telemetry.
+
+6. OFFLINE OPERATION
+
+An internet connection is not required for audio
+processing, analysis or export.
+
+7. THIRD-PARTY SERVICES
+
+GitHub is used for software distribution, release
+information, documentation and community support.
+
+GitHub Privacy Statement:
+https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+
+Homebrew is an optional third-party package manager
+with its own privacy and analytics policies.
+
+Homebrew Analytics:
+https://docs.brew.sh/Analytics
+
+8. CONTACT
+
+Ronny Künniger
+Independent audio software development
+Germany
+
+Email: RonnyK.1980@icloud.com
+
+This notice describes the intended application behavior.
+Runtime network behavior has not been independently audited.
+
+Copyright © 2026 Ronny Künniger.
+AIIO² AUDIO LAB
