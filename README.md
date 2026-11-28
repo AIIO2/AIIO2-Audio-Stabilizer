@@ -15,7 +15,11 @@
 ![License](https://img.shields.io/badge/License-Proprietary-555555)
 ![Price](https://img.shields.io/badge/Public_Beta-Free-39805A)
 
-<br>
+<br><br>
+
+<img src="assets/interface-as2.png" width="480" alt="AIIO² AS-2 Application Interface">
+
+<br><br>
 
 [![Download AS-2](https://img.shields.io/badge/DOWNLOAD_AS--2-FREE_BETA-D98B35?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-V2.00-BETA-Build10019.zip)
 
@@ -23,7 +27,7 @@
 
 [User Manual (PDF)](https://github.com/AIIO2/AIIO2-Audio-Stabilizer/releases/download/v2.00-beta-build10019/AS-2-User-Manual.pdf) · [Installation](#installation) · [Homebrew](#alternative-installation-via-homebrew) · [Release Notes](../../releases/tag/v2.00-beta-build10019)
 
-[License](LICENSE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
+[License](LICENSE.txt) · [Privacy](PRIVACY-NOTICE.txt) · [Bug Reports](../../issues) · [Community](../../discussions) · [Contact](mailto:RonnyK.1980@icloud.com)
 
 </div>
 
@@ -714,6 +718,17 @@ Sixteen offline render comparisons remained byte-identical to the preceding deve
 
 These results apply to the executed test scenarios and do not establish universal hardware compatibility.
 
+The following distribution and functional checks have also been successfully completed on Apple M4 hardware:
+
+- Homebrew release detection.
+- Official release download and SHA-256 verification.
+- Clean Homebrew installation.
+- Installed build number verification.
+- Strict application signature verification.
+- Successful application launch.
+- Successful audio export.
+- Integrated update check against the public update manifest.
+
 Current limitations include:
 
 - Apple Silicon only.
@@ -729,6 +744,8 @@ Current limitations include:
 - Ad hoc signing without Apple notarization.
 
 Real-world M1-family testing and comprehensive compatibility verification remain outstanding.
+
+A direct Homebrew upgrade from an intact AS-1 installation and the integrated download of a future release have not yet been verified.
 
 ---
 
@@ -761,6 +778,8 @@ The application does not include a built-in audio-upload or device-identifier te
 Homebrew is an optional third-party package management tool with its own privacy and analytics policies.
 
 [Homebrew Analytics Documentation](https://docs.brew.sh/Analytics)
+
+[Read the complete Privacy Notice](PRIVACY-NOTICE.txt)
 
 ---
 
@@ -823,7 +842,7 @@ The official Homebrew Tap is maintained separately:
 
 The free Public Beta does not imply that future versions will necessarily be distributed free of charge.
 
-[Public Beta License](LICENSE.txt)
+[Public Beta License](LICENSE.txt) · [Privacy Notice](PRIVACY-NOTICE.txt)
 
 ---
 
